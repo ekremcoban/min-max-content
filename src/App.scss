@@ -65,18 +65,10 @@
         margin: 30px auto;
     
         display: grid;
-        grid-template-rows: 100px 200px 400px 100px;
-        // grid-template-columns: repeat(2, 150px) 1fr;
-        grid-template-columns: repeat(3, 1fr) 200px;
-        // grid-template-columns: 50% 1fr 2fr;
-        grid-template-areas: "head head head head"
-                             "box box box side"
-                             "main main main side"
-                             "foot foot foot foot";
-    
-        // grid-row-gap: 30px;
-        // grid-column-gap: 30px;
-        grid-gap: 30px;
+        // grid-template-rows: repeat(2, min-content);
+        grid-template-rows: repeat(2, minmax(150px, min-content));
+        // grid-template-columns: max-content 1fr 1fr min-content;
+        grid-template-columns: minmax(200px, 300px) repeat(3, 1fr);
     }
     
     .item {
@@ -86,20 +78,12 @@
         color: white;
         background-color: red;
 
-
-        &__header {
-            grid-area: head;
-        }
-    
-        &__slide-bar {
-            grid-area: side;
-        }
-    
-        &__main-content {
-            grid-area: main;
-        }
-    
-        &__footer {
-            grid-area: foot;
-        }
+        &--1 { background-color: orangered; }
+        &--2 { background-color: yellowgreen; }
+        &--3 { background-color: blueviolet; }
+        &--4 { background-color: palevioletred; }
+        &--5 { background-color: royalblue; }
+        &--6 { background-color: goldenrod; }
+        &--7 { background-color: crimson; }
+        &--8 { background-color: darkslategrey; }
     }
